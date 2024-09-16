@@ -1,0 +1,155 @@
+/* subtask-list.component.scss */
+.subtasks-container {
+    margin-top: 2rem;
+  }
+
+  /* Default styles for all input fields */
+input[type='text'] {
+    border: 1px solid #ddd;
+    padding: 0.4rem;
+    border-radius: 5px;
+    margin-right: 0.8rem;
+    transition: color 0.3s ease;
+  }
+  
+  /* Gray text for older subtasks */
+  .old-subtask {
+    color: gray;
+  }
+  
+  /* Black text for newly added subtasks */
+  .new-subtask {
+    color: black;
+  }
+  .progress-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    h3 {
+      font-size: 1rem;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    
+    .progress-bar {
+      background-color: #e0e0e0;
+      width: 100px;
+      height: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .progress {
+      height: 100%;
+      background-color: #6c63ff;
+      width: 0; /* Initial width, will be dynamically updated */
+      transition: width 0.3s ease;
+    }
+    span {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    
+  }
+  
+  .completed {
+    background-color: #58d68d; /* Green for completed */
+  }
+  
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0.8rem;
+  }
+  
+  input[type='text'] {
+    flex-grow: 1;
+    padding: 0.4rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 0.8rem;
+  }
+  /* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #e0e0e0a0;
+  border-radius: 50%; /* Makes the checkbox rounded */
+  background-color: #f8f7f7;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+  border-color: #e0e0e0a0;
+}
+
+/* Optional hover effect */
+input[type="checkbox"]:hover {
+  border-color: #999;
+}
+
+/* Add checkmark using ::after */
+input[type="checkbox"]:checked::after {
+  content: ''; /* Unicode checkmark */
+  background-image: url('../../../assets/icons/icon-checkmark.svg');  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 27px;
+  height: 27px;
+  font-size: 18px;
+}
+
+  button {
+    padding: 0.4rem 0.8rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #e6e6e6;
+  }
+  /* For the completed circle animation */
+.completed-circle {
+    background-color: #58d68d;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .completed-circle:before {
+    content: '✔';
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .completed-circle:hover {
+    background-color: #45b26b;
+  }
+  

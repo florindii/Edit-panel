@@ -1,0 +1,48 @@
+<div class="task-details-container">
+  <div class="logic-pilot mb-2"><i class="icon-logicpilot"></i><span>Ask Logic Pilot to generate subtasks or to summarize comments</span> </div>
+    <form [formGroup]="taskForm">
+      <div class="task-details">
+        <!-- Explicitly cast to FormControl and ensure null safety -->
+        <app-inline-edit
+        [control]="$any(taskForm).get('status')"
+        [statusColor]="ticket.statusColor"
+          label="Status"
+          placeholder="Enter Status"
+        ></app-inline-edit>
+  
+        <app-inline-edit
+        [control]="$any(taskForm).get('assignee')"
+          label="Assignee"
+          placeholder="Enter Assignee"
+        ></app-inline-edit>
+  
+        <app-inline-edit
+        [control]="$any(taskForm).get('coOwner')"
+          label="Co-owner"
+          placeholder="Enter Co-owner"
+        ></app-inline-edit>
+  
+        <app-inline-edit
+        [control]="$any(taskForm).get('importance')"
+          label="Importance"
+          placeholder="Enter Importance"
+        ></app-inline-edit>
+  
+        <app-inline-edit
+        [control]="$any(taskForm).get('customerName')"
+          label="Customer Name"
+          placeholder="Enter Customer Name"
+        ></app-inline-edit>
+  
+        <app-inline-edit
+        [control]="$any(taskForm).get('invoiceId')"
+          label="Invoice ID"
+          placeholder="Enter Invoice ID"
+        ></app-inline-edit>
+      </div>
+  
+      <!-- Subtasks section -->
+      <app-subtask-list></app-subtask-list>
+    </form>
+  </div>
+  

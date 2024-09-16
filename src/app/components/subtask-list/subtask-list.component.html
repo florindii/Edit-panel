@@ -1,0 +1,21 @@
+<div class="subtasks-container">
+  <div class="progress-wrapper">
+    <h3>Subtasks</h3>
+    <div class="progress-bar">
+      <div class="progress" [ngStyle]="{ width: progress + '%' }"></div>
+    </div>
+    <span>{{ completedSubtasks }}/{{ totalSubtasks }}</span>
+  </div>
+  <ul class="mt-4">
+    <li *ngFor="let subtask of subtasks; let i = index">
+      <input type="checkbox" [checked]="subtask.completed" (change)="toggleSubtask(i)" />
+      
+      <input type="text"
+      [ngClass]="{ 'new-subtask': i === subtasks.length - 1, 'old-subtask': i !== subtasks.length - 1 }" 
+       [value]="subtask.name" [placeholder]="'Subtask ' + (i + 1)" >
+      <button type="button" (click)="removeSubtask(i)">Remove</button>
+    </li>
+  </ul>
+  <button type="button" (click)="addSubtask($event)">+ Add subtask</button>
+</div>
+

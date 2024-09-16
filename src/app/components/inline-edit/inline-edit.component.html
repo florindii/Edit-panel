@@ -1,0 +1,16 @@
+<div *ngIf="control" class="inline-editor">
+  <div class="label">
+    <!-- <img [src]="iconUrl" alt="{{ label }} icon" class="label-icon" /> -->
+    <div [ngStyle]="{ 'background-image': 'url(' + iconUrl + ')' }" class="label-icon"></div>
+
+    <label>{{ label }}</label>
+  </div>
+  <div class="value">
+    <div *ngIf="!editable || readonly">
+      <span (click)="toggleEdit()" [ngStyle]="{ backgroundColor: statusColor }">{{ control.value || placeholder }}</span>
+    </div>
+    <div *ngIf="editable && !readonly">
+      <input [formControl]="control" [placeholder]="placeholder" (blur)="toggleEdit()" />
+    </div>
+  </div>
+</div>

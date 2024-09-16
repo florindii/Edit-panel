@@ -1,0 +1,59 @@
+/* task-edit.component.scss */
+.task-details-container {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Roboto', sans-serif;
+
+  .logic-pilot{
+    background-color: rgba(241, 199, 237, 0.444);
+    padding: 5px;
+    display: flex;
+    .icon-logicpilot{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('../../../assets/icons/icon-logicpilot.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.task-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Customize buttons */
+button {
+  padding: 0.6rem 1rem;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #5848c2;
+}
